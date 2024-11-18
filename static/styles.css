@@ -1,0 +1,222 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    transform: perspective(1000px) rotateX(0deg);
+    animation: dropIn 1s ease-out;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #3498db;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.auth-btn-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Auth Button */
+.auth-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #3498db;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.auth-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.auth-btn:hover::before {
+    transform: translateY(0);
+}
+
+.auth-btn:hover {
+    background: #2980b9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.auth-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Flash Messages Styling */
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.flash-messages .success {
+    background: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.flash-messages .error {
+    background: #e74c3c;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation */
+@keyframes dropIn {
+    from {
+        transform: perspective(1000px) rotateX(-15deg) translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(1000px) rotateX(0deg) translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .auth-btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-btn {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+    }
+}
+
+/* Register Link Styling */
+.register-link {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.register-link a {
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.register-link a:hover {
+    color: #4CAF50;  /* Change color on hover */
+    transform: scale(1.05); /* Subtle enlarge effect */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.6); /* Soft glow */
+}
+
+.register-link a:active {
+    transform: scale(0.98);
+}
+
+/* Form Styling */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.auth-form input:hover {
+    transform: translateY(-3px);
+}
+
+.auth-form input:active {
+    transform: translateY(1px);
+}
+
+/* Login Link Styling */
+.login-link {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.login-link a {
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.login-link a:hover {
+    color: #4CAF50;  /* Change color on hover */
+    transform: scale(1.05); /* Subtle enlarge effect */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.6); /* Soft glow */
+}
+
+.login-link a:active {
+    transform: scale(0.98);
+}
+
