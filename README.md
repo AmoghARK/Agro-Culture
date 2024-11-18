@@ -1,4 +1,4 @@
-Crop Prediction System 🌾
+Crop Prediction System 
 This is a Streamlit-based web application that predicts the best crop to cultivate based on environmental and soil parameters. The system leverages machine learning models to provide accurate crop recommendations and offers a user-friendly interface for easy interaction.
 
 Table of Contents
@@ -25,20 +25,20 @@ Frontend & Backend: Streamlit (Python)
 Machine Learning: Scikit-learn for building and deploying the machine learning model.
 Data Storage: Pickle for loading the pre-trained model and scalers.
 Visualization: Streamlit’s built-in components for displaying data and prediction results.
+
 Installation
 Clone the repository:
-
 bash
 Copy code
-git clone https://github.com/your-username/crop-prediction-streamlit.git
+git clone https://github.com/AmoghAK/Agro-Culture.git
 cd crop-prediction-streamlit
-Install the required packages:
 
+Install the required packages:
 bash
 Copy code
 pip install -r requirements.txt
-Run the Streamlit application:
 
+Run the Streamlit application:
 bash
 Copy code
 streamlit run app.py
